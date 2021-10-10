@@ -1,0 +1,58 @@
+/** start with our smallest screen size first - serve scaled down images being conscious of page load and bandwidth **/
+
+/** the original image is 4460px by 2973 and 950KB 
+ - first find find ratio: 4460/2973 = 1.5
+ - secondly, reduce the size of your photo in photoshop or the squoosh app 
+ - thirdly, then run it through a compression tool to reduce the size a bit more
+**/
+
+header {
+
+    background: url(../img/plant-bg-sm.webp) center bottom / cover no-repeat;
+    height: 25rem; /**400px**/
+    padding: 2rem;
+    /** longhand 
+    background-image: url(../img/plant-bg-sm.jpg);
+    background-position: center bottom;
+    background-size: cover;
+    background-repeat: no-repeat;
+    **/
+}
+
+h1 {
+    font-size: 2.5rem;
+    text-align: center;
+}
+
+/** As the screen gets wider, the background image stretches to fit and the lower quality of the image no longer looks good **/
+
+@media screen and (min-width: 800px) {
+    header {
+
+        background: url(../img/plant-bg-md.webp) center bottom / cover no-repeat;
+    }
+
+    h1{
+        font-size: calc(2.5rem + 2vw);
+    }
+
+}
+
+@media screen and (min-width: 1000px) {
+    header{ 
+        height: 31.25rem; /**500px**/
+    }
+}
+
+/*** continue to use PS or the Squoosh.app to resize and compress your images, as well as online compressor. **/
+/** save your desktop image (banner images) at a higher quality level, as it will stretch beyond the actual cropped width. Current reccommendation are to keep full screen and background images under 250KB **/
+
+@media screen and (min-width: 1400) {
+    header {
+
+        background: url(../img/plant-bg-lg.webp) center bottom / cover no-repeat;
+        height: 43.75rem;
+    }
+}
+
+
